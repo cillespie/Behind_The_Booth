@@ -1,0 +1,19 @@
+{
+  "name": "behind-the-booth-entertainment",
+  "version": "1.0.0",
+  "description": "Professional DJ Service Website for Behind The Booth Entertainment LLC",
+  "main": "public/index.html",
+  "scripts": {
+    "dev": "vite public",
+    "build": "vite build public --outDir ../dist",
+    "preview": "vite preview public",
+    "optimize": "node optimize.js"
+  },
+  "devDependencies": {
+    "vite": "^5.2.11"
+  },
+  "dependencies": {
+    "firebase": "^11.0.0",
+    "sharp": "^0.34.5"
+  }
+}
