@@ -7,9 +7,15 @@
       "**/.*",
       "**/node_modules/**"
     ],
+    "rewrites": [
+      {
+        "source": "/api/booking",
+        "function": "submitBooking"
+      }
+    ],
     "headers": [
       {
-        "source": "**/*.@(webp|png|jpg|jpeg|gif|svg|webp)",
+        "source": "**/*.@(webp|png|jpg|jpeg|gif|svg)",
         "headers": [
           {
             "key": "Cache-Control",
@@ -22,10 +28,17 @@
         "headers": [
           {
             "key": "Cache-Control",
-            "value": "max-age=31536000"
+            "value": "no-cache"
           }
         ]
       }
     ]
+  },
+  "functions": {
+    "source": "functions"
+  },
+  "firestore": {
+    "rules": "firestore.rules",
+    "indexes": "firestore.indexes.json"
   }
 }

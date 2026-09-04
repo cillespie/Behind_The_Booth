@@ -1,0 +1,11 @@
+rules_version = '2';
+service cloud.firestore {
+  match /databases/{database}/documents {
+
+    // All data is written exclusively by the Admin SDK (Cloud Functions).
+    // No client reads or writes are permitted.
+    match /{document=**} {
+      allow read, write: if false;
+    }
+  }
+}

@@ -9,6 +9,7 @@
     <meta name="description" content="Premier professional DJ service by Jonathan Henriques. Delivering premium sound, club-level intelligent lighting, and tailored soundtracks for Weddings, Proms, Corporate Gigs, and Private Events across Winchester, VA, Northern Virginia, Maryland, and Washington D.C.">
     <meta name="keywords" content="DJ, Winchester VA DJ, DMV DJ, Wedding DJ Virginia, Prom DJ Winchester, Corporate Event DJ, Behind The Booth Entertainment, Jonathan Henriques DJ">
     <meta name="author" content="Behind The Booth Entertainment LLC">
+    <meta name="theme-color" content="#05080E">
     
     <!-- Open Graph / Facebook -->
     <meta property="og:type" content="website">
@@ -68,6 +69,9 @@
         "Virginia",
         "Northern Virginia"
       ],
+      "sameAs": [
+        "https://instagram.com/behind_the_booth_entertainment"
+      ],
       "description": "Premier professional DJ service delivering premium sound, club-level lighting, and custom soundtracks for Weddings, Proms, Corporate Gigs, and Private Events across Northern Virginia and the DMV."
     }
     </script>
@@ -75,12 +79,12 @@
 <body>
 
     <!-- Laser Scanning Divider (Visual Accent) -->
-    <div class="laser-scanner" id="laserScanner"></div>
+    <div class="laser-scanner" id="laserScanner" aria-hidden="true"></div>
 
     <!-- Background Parallax Canvas & Ambient Glows -->
-    <div class="bg-glow bg-glow-purple"></div>
-    <div class="bg-glow bg-glow-green"></div>
-    <div class="bg-glow bg-glow-gold"></div>
+    <div class="bg-glow bg-glow-purple" aria-hidden="true"></div>
+    <div class="bg-glow bg-glow-green" aria-hidden="true"></div>
+    <div class="bg-glow bg-glow-gold" aria-hidden="true"></div>
 
     <!-- Header / Glass Navigation -->
     <header class="main-header" id="mainHeader">
@@ -102,7 +106,7 @@
 
             <div class="header-actions">
                 <a href="#booking" class="btn btn-shimmer btn-gold header-cta" id="headerCtaBtn">Secure Your Date</a>
-                <button class="mobile-nav-toggle" id="mobileNavToggle" aria-label="Toggle Navigation menu">
+                <button type="button" class="mobile-nav-toggle" id="mobileNavToggle" aria-label="Toggle Navigation menu" aria-expanded="false" aria-controls="mobileMenu">
                     <span class="hamburger-bar"></span>
                     <span class="hamburger-bar"></span>
                     <span class="hamburger-bar"></span>
@@ -128,7 +132,7 @@
         <section class="hero-section" id="hero">
             <div class="hero-container">
                 <div class="hero-logo-wrapper scroll-reveal">
-                    <img src="assets/logo.webp" alt="Behind The Booth Entertainment LLC Logo" class="hero-logo-img" width="1380" height="728">
+                    <img src="assets/logo.webp" alt="Behind The Booth Entertainment LLC Logo" class="hero-logo-img" width="1380" height="728" fetchpriority="high">
                 </div>
                 
                 <h1 class="hero-title scroll-reveal">
@@ -180,7 +184,7 @@
                 <div class="about-grid">
                     <div class="about-image-wrapper scroll-reveal">
                         <div class="premium-image-frame">
-                            <img src="assets/JonHeadshot.webp" alt="Jonathan Henriques DJing" class="about-profile-img" width="451" height="838">
+                            <img src="assets/JonHeadshot.webp" alt="Jonathan Henriques DJing" class="about-profile-img" width="451" height="838" loading="lazy">
                             <div class="card-glowing-glow"></div>
                         </div>
                     </div>
@@ -208,8 +212,8 @@
                                 <span class="stat-label">Personal Accountability</span>
                             </div>
                             <div class="stat-item">
-                                <span class="stat-number purple-gradient-text">Licensed</span>
-                                <span class="stat-label">Highly Rated</span>
+                                <span class="stat-number purple-gradient-text">DMV</span>
+                                <span class="stat-label">Winchester &bull; DC &bull; MD &bull; VA</span>
                             </div>
                         </div>
                     </div>
@@ -346,41 +350,41 @@
 
                         <div class="gear-details-accordion">
                             <div class="accordion-item active" id="accAudio">
-                                <button class="accordion-trigger">
+                                <button type="button" class="accordion-trigger" aria-expanded="true" aria-controls="accAudio-content">
                                     <span class="accordion-title">Premium Sound Reinforcement</span>
                                     <span class="accordion-icon">+</span>
                                 </button>
-                                <div class="accordion-content">
+                                <div class="accordion-content" id="accAudio-content">
                                     <p>We deploy professional <strong>QSC</strong> &amp; <strong>Electro-Voice</strong> active sound systems, tailored to the size and acoustics of your specific venue. High-fidelity tops deliver crisp, understandable vocals, while active subwoofers fill the room with deep, physical bass.</p>
                                 </div>
                             </div>
 
                             <div class="accordion-item" id="accMix">
-                                <button class="accordion-trigger">
+                                <button type="button" class="accordion-trigger" aria-expanded="false" aria-controls="accMix-content">
                                     <span class="accordion-title">Professional DJ Stations</span>
                                     <span class="accordion-icon">+</span>
                                 </button>
-                                <div class="accordion-content">
+                                <div class="accordion-content" id="accMix-content">
                                     <p>Mixing is executed live using industry-standard <strong>Pioneer DJ</strong> professional controllers and decks. No pre-recorded mixes, no lazy iTunes playlists—just seamless, organic transitions that read and react to your guests in real-time.</p>
                                 </div>
                             </div>
 
                             <div class="accordion-item" id="accLighting">
-                                <button class="accordion-trigger">
+                                <button type="button" class="accordion-trigger" aria-expanded="false" aria-controls="accLighting-content">
                                     <span class="accordion-title">Intelligent Dance Floor Lighting</span>
                                     <span class="accordion-icon">+</span>
                                 </button>
-                                <div class="accordion-content">
+                                <div class="accordion-content" id="accLighting-content">
                                     <p>Visual presentation matters. We utilize professional <strong>Chauvet DJ</strong> moving heads, lasers, and wireless venue uplighting. Our lighting systems are fully synchronized to coordinate with dinner, slow dances, and high-energy party segments.</p>
                                 </div>
                             </div>
 
                             <div class="accordion-item" id="accSafety">
-                                <button class="accordion-trigger">
+                                <button type="button" class="accordion-trigger" aria-expanded="false" aria-controls="accSafety-content">
                                     <span class="accordion-title">Built-in Redundancy</span>
                                     <span class="accordion-icon">+</span>
                                 </button>
-                                <div class="accordion-content">
+                                <div class="accordion-content" id="accSafety-content">
                                     <p>Every single gig features a full set of redundant backup gear to ensure the music never stops.</p>
                                 </div>
                             </div>
@@ -389,7 +393,7 @@
 
                     <div class="gear-visual scroll-reveal">
                         <div class="gear-image-frame">
-                            <img src="assets/Eventdowntown.webp" alt="High-energy event with laser lights" class="gear-showcase-img" width="946" height="2047">
+                            <img src="assets/Eventdowntown.png" alt="High-energy event with laser lights" class="gear-showcase-img" width="946" height="2047" loading="lazy">
                             <div class="image-overlay-glow"></div>
                         </div>
                     </div>
@@ -432,33 +436,33 @@
                 <div class="faq-accordion-grid scroll-reveal">
                     
                     <div class="faq-item glass-panel">
-                        <button class="faq-question">
+                        <button type="button" class="faq-question" aria-expanded="false" aria-controls="faq-answer-1">
                             <span>Do you take live music requests?</span>
                             <span class="faq-icon">+</span>
                         </button>
-                        <div class="faq-answer">
+                        <div class="faq-answer" id="faq-answer-1">
                             <p>Absolutely! I welcome requests and work them into the mix. I'll always make sure they fit the vibe and guidelines of your event.</p>
                         </div>
                     </div>
 
-                    
+
 
                     <div class="faq-item glass-panel">
-                        <button class="faq-question">
+                        <button type="button" class="faq-question" aria-expanded="false" aria-controls="faq-answer-2">
                             <span>How far will you travel for an event?</span>
                             <span class="faq-icon">+</span>
                         </button>
-                        <div class="faq-answer">
+                        <div class="faq-answer" id="faq-answer-2">
                             <p>Based in Winchester, VA and serving the entire DMV area — DC, Maryland, and Virginia. Travel fees may apply depending on distance. Reach out and we'll work it out.</p>
                         </div>
                     </div>
 
                     <div class="faq-item glass-panel">
-                        <button class="faq-question">
+                        <button type="button" class="faq-question" aria-expanded="false" aria-controls="faq-answer-3">
                             <span>Have more questions?</span>
                             <span class="faq-icon">+</span>
                         </button>
-                        <div class="faq-answer">
+                        <div class="faq-answer" id="faq-answer-3">
                             <p>The best way to get answers fast is to reach out directly. Call or text <a href="tel:5408774330" class="gold-light-text">(540) 877-4330</a> or shoot an email to <a href="mailto:djjondoe@behindtheboothent.com" class="gold-light-text">djjondoe@behindtheboothent.com</a>.</p>
                         </div>
                     </div>
@@ -480,6 +484,7 @@
                 
                 <div class="instagram-embed-wrapper glass-panel scroll-reveal instagram-embed-wrapper-style">
                     <blockquote class="instagram-media instagram-media-style" data-instgrm-permalink="https://www.instagram.com/p/DR8meHtjXcAFEEHRPV-ayUC23j7lPvl3CcDUIA0/" data-instgrm-version="14">
+                        <p style="text-align:center; padding:16px;"><a href="https://www.instagram.com/behind_the_booth_entertainment/" target="_blank" rel="noopener noreferrer" style="color:#D4AF37;">View our latest gigs on Instagram →</a></p>
                     </blockquote>
                     <script async src="https://www.instagram.com/embed.js"></script>
                 </div>
@@ -538,11 +543,9 @@
                         <h3 class="form-title text-center">Event &amp; Consultation Form</h3>
                         
                         <!-- Premium Action Booking Form -->
-                        <form action="https://formsubmit.co/djjondoe@behindtheboothent.com" method="POST" class="booking-form" id="bookingForm">
-                            <!-- Anti-spam & config for FormSubmit -->
-                            <input type="hidden" name="_captcha" value="false">
-                            <input type="hidden" name="_subject" value="New Event & Consultation Request!">
-                            <input type="hidden" name="_template" value="table">
+                        <form action="/api/booking" method="POST" class="booking-form" id="bookingForm">
+                            <!-- Honeypot anti-spam field (hidden from real users) -->
+                            <input type="text" name="_gotcha" style="display:none" tabindex="-1" autocomplete="off">
 
                             <div class="form-row">
                                 <div class="form-group">
@@ -624,7 +627,7 @@
     <footer class="main-footer">
         <div class="footer-container">
             <div class="footer-branding">
-                <img src="assets/Logo2.webp" alt="Behind The Booth Accent Logo" class="footer-logo" width="1408" height="768">
+                <img src="assets/Logo2.webp" alt="Behind The Booth Accent Logo" class="footer-logo" width="1408" height="768" loading="lazy">
                 <h3 class="footer-brand-title">BEHIND THE BOOTH</h3>
                 <p class="footer-tagline">Entertainment LLC</p>
                 <p class="footer-desc">Winchester's premier professional DJ service. Bringing elite audio and high-energy club lighting setups to weddings, corporate events, and school dances across the entire DMV region.</p>
