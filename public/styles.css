@@ -750,7 +750,7 @@ input, select, textarea, button {
 /* --- ABOUT SECTION --- */
 .about-grid {
     display: grid;
-    grid-template-cols: 1.1fr 1.3fr;
+    grid-template-columns: 1.1fr 1.3fr;
     gap: 64px;
     align-items: center;
 }
@@ -829,7 +829,7 @@ input, select, textarea, button {
 
 .about-stats {
     display: grid;
-    grid-template-cols: 1fr 1fr;
+    grid-template-columns: 1fr 1fr;
     gap: 24px;
     margin-top: 32px;
 }
@@ -863,7 +863,7 @@ input, select, textarea, button {
 /* --- SERVICES GRID SECTION --- */
 .services-grid {
     display: grid;
-    grid-template-cols: repeat(2, 1fr);
+    grid-template-columns: repeat(2, 1fr);
     gap: 32px;
     margin-top: 20px;
 }
@@ -1021,7 +1021,7 @@ input, select, textarea, button {
 /* --- THE GEAR SECTION --- */
 .gear-grid {
     display: grid;
-    grid-template-cols: 1.3fr 1.1fr;
+    grid-template-columns: 1.3fr 1.1fr;
     gap: 64px;
     align-items: center;
 }
@@ -1297,7 +1297,7 @@ input, select, textarea, button {
 /* --- FAQ ACCORDION SECTION --- */
 .faq-accordion-grid {
     display: grid;
-    grid-template-cols: 1fr;
+    grid-template-columns: 1fr;
     gap: 16px;
     max-width: 840px;
     margin: 0 auto;
@@ -1365,7 +1365,7 @@ input, select, textarea, button {
 /* --- BOOKING & FORMS SECTION --- */
 .booking-grid {
     display: grid;
-    grid-template-cols: 1fr 1.2fr;
+    grid-template-columns: 1fr 1.2fr;
     gap: 64px;
     align-items: flex-start;
 }
@@ -1474,7 +1474,7 @@ input, select, textarea, button {
 
 .form-row.two-cols {
     display: grid;
-    grid-template-cols: 1fr 1fr;
+    grid-template-columns: 1fr 1fr;
 }
 
 .form-group {
@@ -1565,7 +1565,7 @@ input, select, textarea, button {
     max-width: 1200px;
     margin: 0 auto;
     display: grid;
-    grid-template-cols: 1.2fr 2fr;
+    grid-template-columns: 1.2fr 2fr;
     gap: 64px;
     padding-bottom: 64px;
 }
@@ -1604,7 +1604,7 @@ input, select, textarea, button {
 
 .footer-links-grid {
     display: grid;
-    grid-template-cols: repeat(3, 1fr);
+    grid-template-columns: repeat(3, 1fr);
     gap: 32px;
 }
 
@@ -1676,6 +1676,30 @@ input, select, textarea, button {
 .scroll-reveal:nth-child(3) { transition-delay: 0.3s; }
 .scroll-reveal:nth-child(4) { transition-delay: 0.45s; }
 
+/* Reveal animations are opt-out: content must never depend on motion to be visible */
+@media (prefers-reduced-motion: reduce) {
+    .scroll-reveal,
+    .scroll-reveal:nth-child(2),
+    .scroll-reveal:nth-child(3),
+    .scroll-reveal:nth-child(4) {
+        opacity: 1;
+        transform: none;
+        transition: none;
+        animation: none;
+        transition-delay: 0s;
+    }
+
+    .bg-glow,
+    .laser-scanner,
+    .wave-bar {
+        animation: none;
+    }
+
+    html {
+        scroll-behavior: auto;
+    }
+}
+
 /* --- RESPONSIVE MEDIA BREAKPOINTS --- */
 
 /* Ultra-Wide Monitors & 4K adjustments */
@@ -1694,7 +1718,7 @@ input, select, textarea, button {
     .about-grid, 
     .gear-grid, 
     .booking-grid {
-        grid-template-cols: 1fr;
+        grid-template-columns: 1fr;
         gap: 48px;
     }
 
@@ -1710,7 +1734,7 @@ input, select, textarea, button {
     }
     
     .footer-container {
-        grid-template-cols: 1fr;
+        grid-template-columns: 1fr;
         gap: 48px;
     }
 }
@@ -1738,7 +1762,7 @@ input, select, textarea, button {
     }
     
     .services-grid {
-        grid-template-cols: 1fr;
+        grid-template-columns: 1fr;
     }
     
     .service-card {
@@ -1750,12 +1774,12 @@ input, select, textarea, button {
     }
 
     .form-row.two-cols {
-        grid-template-cols: 1fr;
+        grid-template-columns: 1fr;
         gap: 20px;
     }
 
     .footer-links-grid {
-        grid-template-cols: 1fr;
+        grid-template-columns: 1fr;
         gap: 32px;
     }
     
@@ -1781,7 +1805,7 @@ input, select, textarea, button {
     }
 
     .about-stats {
-        grid-template-cols: 1fr;
+        grid-template-columns: 1fr;
         gap: 16px;
     }
     
@@ -1818,7 +1842,7 @@ input, select, textarea, button {
     backdrop-filter: none !important;
     background: rgba(15, 15, 18, 0.98) !important;
   }
-  .ambient-background, .glow-orb {
+  .bg-glow {
     display: none !important;
   }
   .scroll-reveal {

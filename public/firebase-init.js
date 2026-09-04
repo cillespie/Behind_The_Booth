@@ -1,9 +1,18 @@
 // ==========================================================================
 // Behind The Booth Entertainment LLC - Firebase Initialization
+//
+// Loaded directly by the browser as an ES module - there is no bundler in the
+// serving path (firebase.json deploys public/ as-is), so these must be full
+// URLs. Bare specifiers like "firebase/app" cannot be resolved by the browser
+// and will throw before any analytics call is made.
+//
+// Keep the pinned version in step with the firebase devDependency.
 // ==========================================================================
-import { initializeApp } from "firebase/app";
-import { getAnalytics } from "firebase/analytics";
+import { initializeApp } from "https://www.gstatic.com/firebasejs/11.10.0/firebase-app.js";
+import { getAnalytics, isSupported } from "https://www.gstatic.com/firebasejs/11.10.0/firebase-analytics.js";
 
+// Web API keys are public client identifiers, not secrets. Access is controlled
+// by Firebase security rules and the key's HTTP referrer restrictions.
 const firebaseConfig = {
   apiKey: "AIzaSyBUR3Lp8XYuH4oTEScexlwx-KEuyPLl0Nw",
   authDomain: "behind-the-booth-entertainment.firebaseapp.com",
@@ -15,6 +24,16 @@ const firebaseConfig = {
 };
 
 const app = initializeApp(firebaseConfig);
-const analytics = getAnalytics(app);
+
+// getAnalytics throws in contexts without cookies/IndexedDB (private windows,
+// some in-app browsers). Analytics is non-essential, so never let it break the page.
+let analytics = null;
+try {
+  if (await isSupported()) {
+    analytics = getAnalytics(app);
+  }
+} catch (err) {
+  console.warn("Analytics unavailable:", err);
+}
 
 export { app, analytics };
